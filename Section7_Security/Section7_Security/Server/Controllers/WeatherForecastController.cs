@@ -4,7 +4,7 @@ using Section7_Security.Shared;
 
 namespace Section7_Security.Server.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
