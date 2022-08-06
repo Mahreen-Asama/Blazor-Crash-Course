@@ -1,0 +1,98 @@
+﻿@page "/lcm/{Param1?}"
+
+<h3>LifeCycleMethods</h3>
+
+<p>@message</p>
+<p>@Param1</p>
+
+<button @onclick="ClickMeMethod">Click from Parent</button>
+<p>@counter</p>
+
+    <LifeCycleMethodsChild count="@counter"></LifeCycleMethodsChild>
+
+@code {
+    string message;
+    [Parameter]
+    public string Param1{get;set;}
+
+    int counter = 0;
+    void ClickMeMethod() {
+        counter = counter + 1;
+        Console.WriteLine("----------Parent :Click Me Method------------");
+    }
+
+    /*
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        await base.SetParametersAsync(parameters);
+
+        if (parameters.TryGetValue<string>(nameof(Param1), out var value)) {
+
+            if (value is null)
+            {
+                message="no supply";
+                Param1 = "some default value";
+            } 
+            else if (value.Equals("abcd")) {
+                message="supply but changed";
+                Param1 = "some other value";
+            }
+            else {
+                message = "user supply the value of param1" + Param1;
+            }
+        }
+        Console.WriteLine("Parent : SetParametersAsync");
+    }
+    */
+
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        Console.WriteLine("Parent : SetParametersAsync");
+        return base.SetParametersAsync(parameters);
+    }
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("Parent : OnInitialized");
+        base.OnInitialized();
+    }
+    protected override Task OnInitializedAsync()
+    {
+        Console.WriteLine("Parent : OnInitializedAsync");
+
+        return base.OnInitializedAsync();
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("Parent : OnParametersSet");
+
+        base.OnParametersSet();
+    }
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine("Parent : OnParametersSetAsync");
+
+        return base.OnParametersSetAsync();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Console.WriteLine("Parent : OnAfterRender");
+
+        base.OnAfterRender(firstRender);
+    }
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("Parent : OnAfterRenderAsync");
+
+        return base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected override bool ShouldRender()
+    {
+        Console.WriteLine("Parent : ShouldRender");
+
+        return base.ShouldRender();
+    }
+}

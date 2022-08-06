@@ -1,0 +1,24 @@
+﻿@page "/pc"
+@using BlazorWebAssemblyApp_CrashCourse.Models
+
+<PageTitle>ParentComponent</PageTitle>
+
+@*--------------------parent component---------------*@
+<div style="background-color:green;">
+    <h3>Parent Component</h3>
+    <p>Call back msg is: @message</p>
+
+    <CascadingValue Value="@Message" Name="m" IsFixed="true">
+        <CascadingValue Value="@Age" Name="a">
+            <CascadingValue Value="@Name" Name="n">
+                <ChildComponent Titlee="Title from parent" OnClickCallback="GetMessage" @ref="c1"></ChildComponent>
+            </CascadingValue>
+        </CascadingValue>
+    </CascadingValue>
+
+    @*for child component reference*@
+    <button @onclick="OnClick">Click me to access data of child cmpt</button>
+
+    
+</div>
+

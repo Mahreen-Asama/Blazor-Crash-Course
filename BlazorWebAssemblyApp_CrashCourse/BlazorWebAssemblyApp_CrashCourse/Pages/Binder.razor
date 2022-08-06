@@ -1,0 +1,41 @@
+﻿@page "/binder"
+
+<h3>Binder</h3>
+
+    <h3>Form binding</h3>
+
+    @*<input type="number" value="@num" @onchange="MyFun"/>*@
+    <input type="number" @bind-value="@num" @bind-value:event="oninput"/>
+    <button @onclick="UpdateData">UpdateData</button>
+    <p>@num</p>
+    <input type="checkbox" @bind="@isChecked" @bind:event="onchange"/>
+    <p>@isChecked</p>
+
+    <h3>Parent child binding (b/w two components)</h3>
+    <p>@ParentNumber</p>
+    <button @onclick="@UpdateValue">Click to Update data from parent</button>
+
+    <BinderChild @bind-ChildNumber="@ParentNumber" @bind-ChildNumber:event="ChangedName"></BinderChild>
+
+@code {
+    int num = 0;
+    bool isChecked = false;
+    void MyFun(ChangeEventArgs e)
+    {
+        int val = 0;
+        int.TryParse(e.Value.ToString(),out val);
+        num = val;
+    }
+    void UpdateData()
+    {
+        num += 1;
+        isChecked = !isChecked;
+    }
+
+    //for  parent child  binding
+    public int ParentNumber { get; set; } = 1;
+    void UpdateValue()
+    {
+        ParentNumber += 1;
+    }
+}

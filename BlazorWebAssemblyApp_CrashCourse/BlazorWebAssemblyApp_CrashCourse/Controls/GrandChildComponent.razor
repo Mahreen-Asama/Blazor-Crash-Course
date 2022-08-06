@@ -1,0 +1,20 @@
+﻿
+<div style="background-color:red;">
+    <h3>GrandChildComponent</h3>
+
+    @*cascading parameters*@
+    <p>Msg from GrandParent: @MyMessage</p>
+    <p>Age from GrandParent: @MyAge</p>
+    <p>Name from GrandParent: @MyName</p>
+</div>
+
+@code {
+    [CascadingParameter(Name ="m")]
+    public string MyMessage { get; set; }
+
+    [CascadingParameter(Name ="a")]
+    public int MyAge { get; set; }
+
+    [CascadingParameter(Name ="n")]
+    public string MyName { get; set; }
+}

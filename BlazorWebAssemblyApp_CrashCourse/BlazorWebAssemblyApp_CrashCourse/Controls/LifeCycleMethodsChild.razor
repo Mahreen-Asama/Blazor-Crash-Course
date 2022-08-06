@@ -1,0 +1,65 @@
+﻿
+
+<h3>LifeCycleMethodsChild</h3>
+
+<button @onclick="ClickMeMethod">Click from Child</button>
+
+<p>@count</p>
+
+@code {
+    [Parameter]
+    public int count { get; set; }
+    void ClickMeMethod()
+    {
+        count += 1;
+        Console.WriteLine("----------Child :Click Me Method------------");
+    }
+
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        Console.WriteLine("Child : SetParametersAsync");
+        return base.SetParametersAsync(parameters);
+    }
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("Child : OnInitialized");
+        base.OnInitialized();
+    }
+    protected override Task OnInitializedAsync()
+    {
+        Console.WriteLine("Child : OnInitializedAsync");
+
+        return base.OnInitializedAsync();
+    }
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("Child : OnParametersSet");
+
+        base.OnParametersSet();
+    }
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine("Child : OnParametersSetAsync");
+
+        return base.OnParametersSetAsync();
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Console.WriteLine("Child : OnAfterRender");
+
+        base.OnAfterRender(firstRender);
+    }
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("Child : OnAfterRenderAsync");
+
+        return base.OnAfterRenderAsync(firstRender);
+    }
+    protected override bool ShouldRender()
+    {
+        Console.WriteLine("Child : ShouldRender");
+
+        return base.ShouldRender();
+    }
+   }
+   

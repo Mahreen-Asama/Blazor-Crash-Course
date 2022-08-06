@@ -1,0 +1,54 @@
+﻿
+<div style="background-color:yellow;">
+    <h3>Child Component</h3>
+
+    <h3>Title is: @Titlee</h3>
+
+    @*cascading parameters*@
+    <p>Msg from Parent: @MyMessag</p>
+    <p>Age from Parent: @MyAg</p>
+    <p>Name from Parent: @MyNam</p>
+
+    @*using grand child component in child component*@
+    <GrandChildComponent></GrandChildComponent>
+
+    @*event call back*@
+    <button @onclick="@MyMethod">Click me for event callback</button>
+
+    @*child component reference*@
+    <h3>child component reference</h3>
+    <p>It should change when re-render: @RefernceMsg</p>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public string? Titlee { get; set; }
+
+    [CascadingParameter(Name ="m")]
+    public string MyMessag { get; set; }
+
+    [CascadingParameter(Name ="a")]
+    public int MyAg { get; set; }
+
+    [CascadingParameter(Name ="n")]
+    public string MyNam { get; set; }
+
+    //for event call back
+    [Parameter]
+    public EventCallback<string> OnClickCallback{ get; set; }
+
+    private void MyMethod()
+    {
+        OnClickCallback.InvokeAsync("sending string data from child to parent component via event callback");
+    }
+
+    //for child component reference
+    private string RefernceMsg = "Before parent btn click";
+    public void show()
+    {
+        RefernceMsg = "after parent button click";
+        StateHasChanged();              //to notify child cmpt to re-render
+    }
+}

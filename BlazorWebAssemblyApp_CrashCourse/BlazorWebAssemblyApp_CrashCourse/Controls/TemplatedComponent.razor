@@ -1,0 +1,39 @@
+﻿@typeparam TItem
+
+<div style="background-color:pink;">
+    <h3>TemplatedComponent</h3>
+   @* @ChildContent*@
+    <br />
+    @MySection
+    <br />
+    @MySection2
+
+    @*receive data from parent component*@
+    @*@foreach(Product p in myProductsList)
+    {
+       @MyProductsSection(p)
+    }*@
+
+    @*Generic Templated Components*@
+    @foreach(TItem p in ItemsList)
+    {
+       @MyProductsSection(p)
+    }
+</div>
+
+@code {
+    //[Parameter]
+    //public RenderFragment ChildContent{ get; set; }
+
+    [Parameter]
+    public RenderFragment MySection{ get; set; }
+
+    [Parameter]
+    public RenderFragment MySection2{ get; set; }
+
+    //for templated components with data, generic
+    [Parameter]
+    public List<TItem> ItemsList { get; set; }
+    [Parameter]
+    public RenderFragment<TItem> MyProductsSection{ get; set; }
+}

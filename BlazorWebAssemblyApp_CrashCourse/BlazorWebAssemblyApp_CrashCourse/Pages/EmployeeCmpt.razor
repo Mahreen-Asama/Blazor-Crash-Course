@@ -1,0 +1,13 @@
+﻿@page "/emp-cmpt"
+
+<h3>EmployeeCmpt</h3>
+
+@*-------------------------------------work of employee component*@
+
+<h1>@service.Object_ID</h1>
+
+@foreach(Employee e in list)
+{
+    <p>@e.Name , @e.Dept</p>
+}
+

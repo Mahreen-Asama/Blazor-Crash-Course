@@ -1,0 +1,19 @@
+﻿
+<h3>BinderChild</h3>
+
+<p>@ChildNumber</p>
+<button @onclick="UpdateData">Click to Update data from child</button>
+
+@code {
+    [Parameter]
+    public int ChildNumber { get; set; }
+
+    [Parameter]
+    public EventCallback<int> ChangedName{ get; set; }
+
+    void UpdateData()
+    {
+        ChildNumber += 1;
+        ChangedName.InvokeAsync(ChildNumber);
+    }
+}

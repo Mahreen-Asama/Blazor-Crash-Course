@@ -1,0 +1,99 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = BlazorWebAssemblyApp_CrashCourse
+build_property.RootNamespace = BlazorWebAssemblyApp_CrashCourse
+build_property.ProjectDir = C:\Users\Mahreen Asama\source\repos\BlazorWebAssemblyApp_CrashCourse\BlazorWebAssemblyApp_CrashCourse\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Mahreen Asama\source\repos\BlazorWebAssemblyApp_CrashCourse\BlazorWebAssemblyApp_CrashCourse
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Controls/BinderChild.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHNcQmluZGVyQ2hpbGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Controls/ChildComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHNcQ2hpbGRDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Controls/GrandChildComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHNcR3JhbmRDaGlsZENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Controls/LifeCycleMethodsChild.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHNcTGlmZUN5Y2xlTWV0aG9kc0NoaWxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Controls/TemplatedComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHNcVGVtcGxhdGVkQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/Binder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmluZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/EmployeeCmpt.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVDbXB0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/Form.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/LifeCycleMethods.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlmZUN5Y2xlTWV0aG9kcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/ParentComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFyZW50Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/ParentComponent2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFyZW50Q29tcG9uZW50Mi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Pages/RouterParametersComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm91dGVyUGFyYW1ldGVyc0NvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-zc39ogklnj
+
+[C:/Users/Mahreen Asama/source/repos/BlazorWebAssemblyApp_CrashCourse/BlazorWebAssemblyApp_CrashCourse/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-5c8a5myutl

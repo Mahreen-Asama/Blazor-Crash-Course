@@ -1,0 +1,25 @@
+﻿@page "/rpc/{Title}/{Id:int}"
+@page "/rpc"
+
+<PageTitle>RouterParametersComponent</PageTitle>
+
+<div>
+    <h3>RouterParametersComponent</h3>
+    <h1>Title is: @Title</h1>
+    <h1>Id is: @Id</h1>
+</div>
+
+@code {
+    [Parameter]
+    public int? Id{get;set;}
+
+    [Parameter]
+    public string Title{get;set;}
+
+    protected override void OnInitialized()
+    {
+    base.OnInitialized();
+    Title = Title ?? "Defualt title here";
+    Id = Id ?? 1;
+    }
+}

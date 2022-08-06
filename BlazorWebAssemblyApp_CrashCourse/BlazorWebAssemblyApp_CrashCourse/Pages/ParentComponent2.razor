@@ -1,0 +1,46 @@
+﻿@page "/pc2"
+
+<div style="background-color:blue;">
+    <h3>ParentComponent2</h3>
+
+    @*templetd component using RenderFragment*@
+
+    <TemplatedComponent ItemsList="@list" TItem="Product">
+            @*<div>I am div from parent, RenderFragment</div>
+            <input type="text"/>*@
+
+        @*<MySection>
+            <p>My section content here</p>
+        </MySection>
+        <MySection2>
+            @if(isDisplay){
+                <p>MySection2 true</p>
+            }
+            else
+            {
+                <p>MySection2 else</p>
+            }
+        </MySection2>*@
+
+         <MyProductsSection Context="mypro">
+             <div class="bg-primary">
+                <p>ID is: @mypro.Id</p>
+                <p>Name is: @mypro.Name</p>
+                <p>Price is: @mypro.Price</p>
+             </div>
+        </MyProductsSection>
+    </TemplatedComponent>
+</div>
+
+@code {
+    //generic templated components
+    List<Product> list = new List<Product>
+    {
+        new Product{Id=1, Name="Car", Price=400 },
+        new Product{Id=2, Name="Bike", Price=500 },
+        new Product{Id=3, Name="Cycle", Price=600 }
+    };
+
+    //for templated component
+    bool isDisplay = true;
+}
