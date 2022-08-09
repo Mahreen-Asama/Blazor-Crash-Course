@@ -2,7 +2,8 @@
 
 <PageTitle>Weather forecast</PageTitle>
 
-
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
 @using Section7_Security_BlazorServerApp.Data
 @inject WeatherForecastService ForecastService
 @attribute [Authorize(Roles ="Admin,SuperUser")]
@@ -46,5 +47,30 @@ else
     protected override async Task OnInitializedAsync()
     {
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    }
+}
+@code {
+    // to check, exectly what is the role of user who entered into the system 
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    private async Task DoSomething()
+    {
+        var user = (await authenticationStateTask).User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            // Perform an action only available to authenticated (signed-in) users.
+        }
+
+        if (user.IsInRole("Admin"))
+        {
+            // Perform an action only available to users in the 'admin' role.
+        }
+        if (user.IsInRole("SuperUser"))
+        {
+            // Perform an action only available to users in the 'super user' role.
+        }
+
     }
 }
