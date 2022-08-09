@@ -16,6 +16,9 @@
 <button onclick="Fun1(2)">click to Call c# from js</button>
 <p id="p1">Index result is: </p>
 
+<button onclick="Fun2(25)">click to Call c# from js asynchronoulsy</button>
+<p id="p2"> </p>
+
 @code {
     //------------call js methods from c#--------------
     public async void ShowAlert()
@@ -36,7 +39,15 @@
         int[] nos = { 10, 20, 30, 40 };
         return nos[index];
     }
+    //------------call this c# methods from js asynchronously--------------
 
+    [JSInvokable]
+    public static Task<string> CalculateSquareRootAsync(int number)
+    {
+        var result = Math.Sqrt(number);
+        return Task.FromResult($"The square root of {number} is {result}");     //returnning string
+
+    }
 
 
     //counter
