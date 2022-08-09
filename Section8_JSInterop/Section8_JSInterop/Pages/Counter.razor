@@ -1,11 +1,14 @@
 ﻿@page "/counter"
 @inject IJSRuntime JS;
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
 
 <p role="status">Current count: @currentCount</p>
+
+<input @ref="inputElement" @bind="currentCount" />
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
@@ -20,6 +23,12 @@
 <p id="p2"> </p>
 
 @code {
+    private ElementReference inputElement;
+    protected override async Task OnAfterRenderAsync(bool first)
+    {
+        await JSRuntime.InvokeVoidAsync("blazorFocus.set", inputElement);
+    }
+
     //------------call js methods from c#--------------
     public async void ShowAlert()
     {

@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject IJSRuntime jsRuntime
+
 
 <PageTitle>Index</PageTitle>
 
@@ -12,8 +14,19 @@ Welcome to your new app.
 <p>
     Message: @message
 </p>
-<button onclick="JSFunction('my value')"> Call JS Method</button>
+<button onclick="JSFunction('my value')"> Call cmpt instance method</button>
+
+<button @onclick="MyMethod"> Call class method/.net instance from js</button>
+
 @code {
+    private async Task MyMethod()
+    {
+        Models.Person p = new Models.Person { Name = "Shuja" };
+        //creating reference of object 'p' and sending as parameter to "CallClassMethod" 
+        await jsRuntime.InvokeVoidAsync("CallClassMethod", DotNetObjectReference.Create(p)); 
+    }
+
+
     private static Func<string, string> action;     //make a delegate
 
     private string message = "Select the button.";

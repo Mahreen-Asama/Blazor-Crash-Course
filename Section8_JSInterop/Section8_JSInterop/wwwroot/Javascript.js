@@ -17,3 +17,9 @@ window.JSFunction = function (name) {
     //calling c# method 
     var result = DotNet.invokeMethod("Section8_JSInterop", "FunctionCaller", name);
 }
+
+window.CallClassMethod = function (obj) {
+    //calling c# method 
+    var result = obj.invokeMethod("SayHello", "this is string");
+    alert(result);
+}
