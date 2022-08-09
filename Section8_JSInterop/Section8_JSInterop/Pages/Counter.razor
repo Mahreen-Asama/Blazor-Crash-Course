@@ -1,0 +1,49 @@
+﻿@page "/counter"
+@inject IJSRuntime JS;
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<button @onclick="ShowAlert">click to Call js from c#</button>
+<button class="btn btn-danger" @onclick="ShowSum">Show Sum</button>
+<p>sum is: @sum</p>
+
+<button onclick="Fun1(2)">click to Call c# from js</button>
+<p id="p1">Index result is: </p>
+
+@code {
+    //------------call js methods from c#--------------
+    public async void ShowAlert()
+    {
+        await JS.InvokeVoidAsync("JSAlert");        //calling that js method from index.html
+    }
+    int sum = 0;
+    public async void ShowSum()
+    {
+        sum = await JS.InvokeAsync<int>("FindSum", 2, 5);   //calling js funcntion
+        StateHasChanged();
+    }
+
+    //------------call this c# methods from js--------------
+     [JSInvokable]      //this attribute means this methods is invokable from js only
+    public static int ReturnArray(int index)
+    {
+        int[] nos = { 10, 20, 30, 40 };
+        return nos[index];
+    }
+
+
+
+    //counter
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
