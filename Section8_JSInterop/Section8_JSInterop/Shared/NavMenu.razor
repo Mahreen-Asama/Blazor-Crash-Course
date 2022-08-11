@@ -1,4 +1,7 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject CounterStateService Model
+@implements IDisposable
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Section8_JSInterop</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -20,6 +23,11 @@
             </NavLink>
         </div>
         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="c2">
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter2: @Model.CounterCount
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
             <NavLink class="nav-link" href="fetchdata">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
             </NavLink>
@@ -35,5 +43,17 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    //methods to notify this cmpt about changes in counter2 cmpt
+    protected override void OnInitialized()
+    {
+        Model.OnChange += StateHasChanged;      //assigning funcion to delegate/event 
+        base.OnInitialized();
+    }
+
+    public void Dispose() {
+
+        Model.OnChange -= StateHasChanged;      //removing function from delegate
     }
 }

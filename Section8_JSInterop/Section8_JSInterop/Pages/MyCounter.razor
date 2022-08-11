@@ -1,0 +1,18 @@
+﻿@page "/c2"
+@inject CounterStateService Modal
+
+<h3>MyCounter2</h3>
+
+<p role="status">Current count: @Modal.CounterCount</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+
+    //counter
+    //private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        Modal.CounterCount += 1;
+    }
+}
